@@ -68,28 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-MY ADDONS
-
-
-Creating User Table
-```
-CREATE TABLE `xenon`.`users` (
-  `username` VARCHAR(30) NOT NULL,
-  `userid` INT NOT NULL AUTO_INCREMENT,
-  `pass` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`userid`),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);
- ALTER TABLE `xenon`.`users` 
-ADD COLUMN `email` VARCHAR(45) NULL AFTER `pass`,
-ADD COLUMN `phone` VARCHAR(45) NULL AFTER `email`;
-```
-Creating Feedback Table
-```
-CREATE TABLE `xenon`.`feedback` (
-  `name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `feedback` VARCHAR(45) NULL,
-  `fid` INT NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`fid`));
-```
