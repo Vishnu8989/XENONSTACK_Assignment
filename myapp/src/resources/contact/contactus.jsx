@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {Feedback} from "../../services/apicalls";
+
 
 export default function Contactus(props) {
     const [name, setName] = useState("");
@@ -19,9 +21,11 @@ export default function Contactus(props) {
 
     function SubmitHandler(event) {
         event.preventDefault();
-        alert(name + " " + email + " " + message);
-        setEmail("");
+        const resp =Feedback(name, email, message);
+        console.log(resp)
+        alert("Feedback sent successfully");
         setName("");
+        setEmail("");
         setMessage("");
     }
 
